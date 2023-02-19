@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://www.frontendmentor.io/solutions/news-homepage-oadhFQitL4)
-- [Live Site URL](https://effulgent-froyo-d5d344.netlify.app/)
+- [Solution URL](https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-jo0JtpkLfR)
+- [Live Site URL](https://mellow-flan-eb0fb5.netlify.app/)
 
 ## My process
 
