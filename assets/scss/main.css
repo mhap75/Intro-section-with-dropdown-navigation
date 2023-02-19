@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+:root {
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  direction: ltr;
+}
+
+body {
+  padding: 0;
+  min-height: 100dvh;
+  line-height: 1.3;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background-color: initial;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:visited {
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 75dvh;
+}
+
+.d-block {
+  display: block;
+}
+
+.featured, .header-primary ul, .header-primary .nav-main, .header-primary {
+  display: flex;
+}
+
+.container, .container-lg {
+  margin: 0 auto;
+}
+
+.btn-fill:hover, .btn-outline:hover {
+  background-color: transparent;
+  color: hsl(0deg, 0%, 8%);
+  outline: 1px solid hsl(0deg, 0%, 8%);
+}
+
+.container, .container-lg {
+  width: 90%;
+}
+
+.btn-outline {
+  border: 1px solid hsl(0deg, 0%, 8%);
+  border-radius: 12px;
+  padding: 0.5em 1.1em;
+}
+
+.btn-fill {
+  background-color: hsl(0deg, 0%, 8%);
+  color: hsl(0deg, 0%, 98%);
+  border-radius: 12px;
+  padding: 1em 1.8em;
+}
+
+.header-primary .nav-sub {
+  box-shadow: 0 0 20px 12px rgba(127, 127, 127, 0.12);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+  font-size: 1.8rem;
+  background-color: hsl(0deg, 0%, 98%);
+  color: hsl(0deg, 0%, 8%);
+  font-weight: 500;
+  padding-bottom: 2rem;
+}
+
+.container-lg {
+  max-width: 1440px;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.header-primary {
+  justify-content: space-between;
+  padding-block: 2.5em;
+  color: hsl(0deg, 0%, 41%);
+}
+.header-primary .nav-main {
+  justify-content: space-between;
+  width: 100%;
+}
+.header-primary .nav-item {
+  position: relative;
+}
+.header-primary .nav-sub {
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  top: 150%;
+  width: -moz-max-content;
+  width: max-content;
+  flex-direction: column;
+  gap: 1ch;
+  font-size: 1.5rem;
+  padding: 1.2em;
+  border-radius: 6.5px;
+  background-color: hsl(0deg, 0%, 98%);
+  overflow: hidden;
+  display: none;
+  height: 0;
+}
+.header-primary .nav-sub img {
+  width: 15px;
+}
+.header-primary ul {
+  gap: 4rem;
+}
+.header-primary ul img {
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.72, 0, 0.15, 0.99);
+}
+
+li:has(img) {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.7rem;
+}
+
+.content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.logo-main {
+  margin-right: 4.5rem;
+}
+.logo-companies {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+a:hover, a:focus {
+  color: hsl(0deg, 0%, 8%);
+}
+a:focus {
+  outline-offset: 1rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 6.5rem;
+  max-width: 11ch;
+}
+
+p {
+  color: hsl(0deg, 0%, 41%);
+}
+
+.featured {
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.featured p {
+  margin-block: 5rem;
+  max-width: 45ch;
+}
+.featured .btn {
+  font-weight: 700;
+}
+
+.active {
+  display: flex !important;
+  height: auto !important;
+}
+
+canvas {
+  display: none;
+}
+canvas[data-expanded=true] {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.72, 0, 0.15, 0.99);
+  animation-fill-mode: forwards;
+}
+
+#menu-open {
+  display: none;
+  z-index: 199;
+  cursor: pointer;
+  background-image: url(../image/icon-menu.svg);
+  width: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 1;
+}
+#menu-open[data-expanded=true] {
+  animation-name: open-menu;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.72, 0, 0.15, 0.99);
+  animation-fill-mode: forwards;
+}
+#menu-open[data-expanded=false] {
+  animation-name: close-menu;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.72, 0, 0.15, 0.99);
+  animation-fill-mode: forwards;
+}
+
+#menu-main[data-expanded=true] {
+  animation-name: slideLeft;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.72, 0, 0.15, 0.99);
+  animation-fill-mode: forwards;
+}
+#menu-main[data-expanded=false] {
+  animation-name: slideRight;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.72, 0, 0.15, 0.99);
+  animation-fill-mode: forwards;
+}
+
+@keyframes open-menu {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+    background-image: url(../image/icon-close-menu.svg);
+  }
+}
+@keyframes close-menu {
+  from {
+    transform: rotate(0);
+    background-image: url(../image/icon-close-menu.svg);
+  }
+  to {
+    transform: rotate(-360deg);
+    background-image: url(../image/icon-menu.svg);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@media screen and (max-width: 500px) {
+  .featured {
+    flex-wrap: wrap-reverse;
+    text-align: center;
+  }
+  .featured h1 {
+    font-size: 3rem;
+    max-width: 100%;
+  }
+  .featured p {
+    margin-block: 2.5rem;
+  }
+  .content-text {
+    gap: 4.5rem;
+  }
+  .logo-companies img {
+    max-width: 70px;
+  }
+}
+@media screen and (max-width: 900px) {
+  canvas {
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+    background-color: rgba(110, 110, 110, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  .nav-main {
+    transform: translateX(100%);
+    padding: 1em;
+    padding-top: 10rem;
+    flex-direction: column;
+    position: fixed;
+    background-color: hsl(0deg, 0%, 98%);
+    right: 0;
+    top: 0;
+    width: 65dvw !important;
+    height: 100dvh;
+    justify-content: flex-start !important;
+    z-index: 99;
+  }
+  .nav-main > * {
+    flex-direction: column;
+  }
+  .nav-main ul {
+    gap: 2rem;
+  }
+  .nav-sub {
+    box-shadow: none !important;
+    position: static !important;
+  }
+  .nav-item {
+    flex-wrap: wrap;
+  }
+  .nav-sign {
+    margin-top: 3rem;
+  }
+  .nav-sign ul {
+    flex-direction: column;
+  }
+  .nav-sign ul a {
+    display: block;
+    text-align: center;
+  }
+  #menu-open {
+    display: inline-block;
+  }
+}/*# sourceMappingURL=main.css.map */
